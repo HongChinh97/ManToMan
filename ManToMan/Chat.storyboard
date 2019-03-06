@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="X6j-f7-MgJ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Chatting View Controller-->
+        <scene sceneID="CWo-ju-KTF">
+            <objects>
+                <viewController storyboardIdentifier="ChattingViewController" id="X6j-f7-MgJ" customClass="ChattingViewController" customModule="ManToMan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J32-7v-rBh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gFp-SO-h9f">
+                                <rect key="frame" x="8" y="483" width="359" height="130"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anh tong dai vien" translatesAutoresizingMaskIntoConstraints="NO" id="XJO-DB-QUt" userLabel="DesignableUIImageView" customClass="ImageViewBorder" customModule="ManToMan" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="30" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="XJO-DB-QUt" secondAttribute="height" multiplier="1:1" id="3BL-oW-SzB"/>
+                                            <constraint firstAttribute="width" constant="70" id="6Rq-5Q-ZLz"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="29"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="-1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NaH-7e-a25">
+                                        <rect key="frame" x="78" y="0.0" width="281" height="130"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npL-7x-Cmx">
+                                                <rect key="frame" x="0.0" y="0.0" width="281" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yWh-Nj-3E2">
+                                                <rect key="frame" x="0.0" y="28.5" width="281" height="101.5"/>
+                                                <string key="text">Cảm ơn bạn đã đăng kí thời gian này. Nếu bạn có bất kì câu hỏi xin vui lòng liên hệ chúng tôi. Xin lưu ý rằng giờ tiếp nhận của chúng tôi trong giờ hành chính.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IUl-T3-ry0">
+                                <rect key="frame" x="8" y="629" width="359" height="30"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter text" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="HYy-Pe-uay">
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="30"/>
+                                        <accessibility key="accessibilityConfiguration" hint="Enter Text">
+                                            <bool key="isElement" value="NO"/>
+                                        </accessibility>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7a-Tk-VPT">
+                                        <rect key="frame" x="327" y="0.0" width="32" height="30"/>
+                                        <state key="normal" title="Sent"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99215686270000003" green="0.92156862750000001" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <accessibility key="accessibilityConfiguration" hint="Enter text"/>
+                        <constraints>
+                            <constraint firstItem="CJh-zp-kAa" firstAttribute="trailing" secondItem="gFp-SO-h9f" secondAttribute="trailing" constant="8" id="1vq-ew-4um"/>
+                            <constraint firstAttribute="bottom" secondItem="IUl-T3-ry0" secondAttribute="bottom" constant="8" id="JIf-vc-t1g"/>
+                            <constraint firstItem="CJh-zp-kAa" firstAttribute="trailing" secondItem="IUl-T3-ry0" secondAttribute="trailing" constant="8" id="ZFI-ab-0hK"/>
+                            <constraint firstItem="IUl-T3-ry0" firstAttribute="top" secondItem="gFp-SO-h9f" secondAttribute="bottom" constant="16" id="ast-dA-q9f"/>
+                            <constraint firstItem="IUl-T3-ry0" firstAttribute="leading" secondItem="CJh-zp-kAa" secondAttribute="leading" constant="8" id="h5n-z7-lde"/>
+                            <constraint firstItem="gFp-SO-h9f" firstAttribute="leading" secondItem="CJh-zp-kAa" secondAttribute="leading" constant="8" id="sbR-Ma-9j4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CJh-zp-kAa"/>
+                    </view>
+                    <connections>
+                        <outlet property="getDate" destination="npL-7x-Cmx" id="iYP-MH-Nht"/>
+                        <outlet property="imageOperator" destination="XJO-DB-QUt" id="NUx-oX-SXW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RJa-OJ-L3z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="168.80000000000001" y="-139.880059970015"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="anh tong dai vien" width="275" height="183"/>
+    </resources>
+</document>

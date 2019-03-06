@@ -25,7 +25,7 @@ class RegistrationStatusViewController: UIViewController,UITableViewDelegate,UIT
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var continueButton: UIButton!
     
-    var nextButton: customButton!
+//    var nextButton: customButton
     
     var titles : [String] = ["Not set","Dispatch registered","Recruitment registered"]
     
@@ -39,7 +39,7 @@ class RegistrationStatusViewController: UIViewController,UITableViewDelegate,UIT
         let paragraphStype = NSMutableParagraphStyle()
         paragraphStype.paragraphSpacing = 10
         paragraphStype.alignment = NSTextAlignment.center
-        let attributed = [NSAttributedString.Key.font: titleLabel.font, NSAttributedString.Key.paragraphStyle: paragraphStype]
+        let attributed = [NSAttributedStringKey.font: titleLabel.font, NSAttributedStringKey.paragraphStyle: paragraphStype] as [NSAttributedStringKey : Any]
         let text = NSMutableAttributedString(string: "Man To Man \n Please let me know the registration status")
         text.addAttributes(attributed, range: NSRange(location: 0, length: text.length))
         titleLabel.attributedText = text

@@ -34,35 +34,35 @@ class StartViewController: UIViewController {
 
 }
 
-@IBDesignable
-class customButton : UIButton {
-    private var _cornerRadius : CGFloat = 0.0
-    
-    @IBInspectable
-    var cornerRadius : CGFloat {
-        set (newValue) {
-            _cornerRadius = newValue
-            setCornerRadius()
-        } get {
-            
-            return _cornerRadius
-        }
-    }
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        setCornerRadius()
-        
-    }
-    func setCornerRadius() {
-        if _cornerRadius == -1 {
-            layer.cornerRadius = frame.height / 2
-        } else {
-            layer.cornerRadius = _cornerRadius
-            
-        }
-    }
-    
-}
+//@IBDesignable
+//class customButton : UIButton {
+//    private var _cornerRadius : CGFloat = 0.0
+//    
+//    @IBInspectable
+//    var cornerRadius : CGFloat {
+//        set (newValue) {
+//            _cornerRadius = newValue
+//            setCornerRadius()
+//        } get {
+//            
+//            return _cornerRadius
+//        }
+//    }
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        setCornerRadius()
+//        
+//    }
+//    func setCornerRadius() {
+//        if _cornerRadius == -1 {
+//            layer.cornerRadius = frame.height / 2
+//        } else {
+//            layer.cornerRadius = _cornerRadius
+//            
+//        }
+//    }
+//    
+//}
 
 
 

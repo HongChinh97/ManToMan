@@ -8,14 +8,14 @@
 
 import UIKit
 import ApiAI
-
+import IQKeyboardManager
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let configuration : AIConfiguration = AIDefaultConfiguration()
         
@@ -26,8 +26,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.shared.statusBarStyle = .lightContent
         
+        let storyboard = UIStoryboard(name: "Chat", bundle: nil)
+        // controller identifier sets up in storyboard utilities
+        //  panel (on the right), it called Storyboard ID
+        if let chattingViewController = storyboard.instantiateViewController(withIdentifier: "ChattingViewController") as? ChattingViewController {
+            let navigation = UINavigationController(rootViewController: chattingViewController)
+            // Sets our window up in front
+            window?.rootViewController = navigation
+        }
+        IQKeyboardManager.shared().isEnabled = true
         return true
     }
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

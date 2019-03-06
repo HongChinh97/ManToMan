@@ -7,4 +7,5 @@ target 'ManToMan' do
 pod ‘ApiAI’
 pod ‘JSQMessagesViewController’
 
+pod 'IQKeyboardManager', '5.0.0'
 end

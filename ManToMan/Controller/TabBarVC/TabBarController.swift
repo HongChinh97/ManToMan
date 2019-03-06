@@ -20,7 +20,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         tabBar.backgroundColor = #colorLiteral(red: 0.9960784314, green: 0.9333333333, blue: 0.831372549, alpha: 1)
         view.addSubview(stackViewButton)
         setApperanceStackView()
-        tabBar.bringSubviewToFront(stackViewButton)
+        tabBar.bringSubview(toFront: stackViewButton)
         //stackViewButton
         chatButton.backgroundColor = UIColorFromRGB(rgbValue: 0xDE3A2B, alpha: 1)
         // Do any additional setup after loading the view.

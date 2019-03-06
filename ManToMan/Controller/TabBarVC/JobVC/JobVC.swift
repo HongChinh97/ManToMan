@@ -76,7 +76,7 @@ class JobVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPop
         sender.isSelected = !sender.isSelected
         sender.contentVerticalAlignment = .center
         popView.isHidden = !popView.isHidden
-        !popView.isHidden ? view.bringSubviewToFront(popView) : view.bringSubviewToFront(placeFilterButton)
+        !popView.isHidden ? view.bringSubview(toFront: popView) : view.bringSubview(toFront: placeFilterButton)
         if sender.isSelected {
         sender.setImage(nil, for: .normal)
         

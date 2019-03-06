@@ -8,35 +8,35 @@
 
 import UIKit
 
-@IBDesignable
-class customTextField : UITextField {
-    private var _cornerRadius : CGFloat = 0.0
-    
-    @IBInspectable
-    var cornerRadius : CGFloat {
-        set (newValue) {
-            _cornerRadius = newValue
-            setCornerRadius()
-        } get {
-            
-            return _cornerRadius
-        }
-    }
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        setCornerRadius()
-        
-    }
-    func setCornerRadius() {
-        if _cornerRadius == -1 {
-            layer.cornerRadius = frame.height / 2
-        } else {
-            layer.cornerRadius = _cornerRadius
-            
-        }
-    }
-    
-}
+//@IBDesignable
+//class customTextField : UITextField {
+//    private var _cornerRadius : CGFloat = 0.0
+//
+//    @IBInspectable
+//    var cornerRadius : CGFloat {
+//        set (newValue) {
+//            _cornerRadius = newValue
+//            setCornerRadius()
+//        } get {
+//
+//            return _cornerRadius
+//        }
+//    }
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        setCornerRadius()
+//
+//    }
+//    func setCornerRadius() {
+//        if _cornerRadius == -1 {
+//            layer.cornerRadius = frame.height / 2
+//        } else {
+//            layer.cornerRadius = _cornerRadius
+//
+//        }
+//    }
+//
+//}
 
 class ChatVC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
     
@@ -62,23 +62,23 @@ class ChatVC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let center: NotificationCenter = NotificationCenter.default
-        center.addObserver(self, selector: #selector(keyboardDidShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        center.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-        center.addObserver(self, selector: #selector(keyboardDidShow(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        center.addObserver(self, selector: #selector(keyboardDidShow(_:)), name:    NSNotification.Name.UIKeyboardWillShow, object: nil)
+        center.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        center.addObserver(self, selector: #selector(keyboardDidShow(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
         
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardDidShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardDidShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
         
     }
     
     @objc func keyboardDidShow(_ notification: Notification) {
 //        print("Keyboard will show: \(notification.name.rawValue)")
         
-        guard let keyboardRect = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {return}
+        guard let keyboardRect = (notification.userInfo![NSNotification.Name.UIKeyboardDidChangeFrame] as? NSValue)?.cgRectValue else {return}
         var contentInset: UIEdgeInsets = self.scrollView.contentInset
         contentInset.bottom = (keyboardRect.height - (tabBarController?.tabBar.frame.height)! + 6)
         scrollView.contentInset = contentInset
@@ -110,9 +110,9 @@ class ChatVC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
     
 }
